@@ -19,16 +19,19 @@ State: **WIP**
 * [x] score set block (epic-block)
   * sets the score-count to a fixed value
 
-* [ ] commit score clock (epic-block)
-  * Saves the current score to a `highscore` block
+* [x] save score clock (epic-block)
+  * Saves the current score to a topic
 
-* [ ] highscore block (standalone-block)
+* [x] highscore block (standalone-block)
   * show highscore of a quest/topic
   * clear highscore button for admins
   * json-export to `epic_score/<topic>`
 
 * [ ] score items (coins)
   * add to score if collected (mechanism?)
+
+* [ ] time bonus/penalty
+  * de- or increases points every n seconds
 
 * [ ] hud integration
 

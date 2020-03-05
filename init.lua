@@ -10,7 +10,7 @@ dofile(MP.."/persistence.lua")
 dofile(MP.."/add_score.lua")
 dofile(MP.."/set_score.lua")
 dofile(MP.."/highscore.lua")
-dofile(MP.."/highscore_commit.lua")
+dofile(MP.."/highscore_save.lua")
 
 -- items
 dofile(MP.."/items.lua")
