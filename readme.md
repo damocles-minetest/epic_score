@@ -33,7 +33,7 @@ State: **WIP**
 * [x] time bonus/penalty
   * de- or increases points every n seconds
 
-* [ ] hud integration
+* [x] hud integration
 
 # Licenses
 

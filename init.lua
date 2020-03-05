@@ -1,10 +1,18 @@
 
-epic_score = {}
+epic_score = {
+  hud = {
+    posx = tonumber(minetest.settings:get("epic_score.hud.offsetx") or 0.5),
+    posy = tonumber(minetest.settings:get("epic_score.hud.offsety") or 0.7)
+  }
+}
 
 local MP = minetest.get_modpath("epic_score")
 
 -- utils
 dofile(MP.."/persistence.lua")
+
+-- hud
+dofile(MP.."/hud.lua")
 
 -- blocks
 dofile(MP.."/add_score.lua")
