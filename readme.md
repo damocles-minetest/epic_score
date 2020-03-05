@@ -13,10 +13,10 @@ State: **WIP**
 
 # TODO
 
-* [ ] score add block (epic-block)
+* [x] score add block (epic-block)
   * adds a score-count to the player metadata `epic_score`
 
-* [ ] score set block (epic-block)
+* [x] score set block (epic-block)
   * sets the score-count to a fixed value
 
 * [ ] commit score clock (epic-block)
@@ -29,6 +29,8 @@ State: **WIP**
 
 * [ ] score items (coins)
   * add to score if collected (mechanism?)
+
+* [ ] hud integration
 
 # Licenses
 
