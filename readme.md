@@ -30,7 +30,7 @@ State: **WIP**
 * [ ] score items (coins)
   * add to score if collected (mechanism?)
 
-* [ ] time bonus/penalty
+* [x] time bonus/penalty
   * de- or increases points every n seconds
 
 * [ ] hud integration
