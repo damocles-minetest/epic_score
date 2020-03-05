@@ -51,8 +51,10 @@ minetest.register_node("epic_score:save", {
       local player_meta = player:get_meta()
       local score = player_meta:get_int("epic_score") or 0
 
-      local topic = meta:get_string("topic") or ""
-      epic_score.update_score(topic, player:get_player_name(), score)
+      local topic = meta:get_string("topic")
+			if topic and score > 0 then
+				epic_score.update_score(topic, player:get_player_name(), score)
+			end
 
       ctx.next()
     end
