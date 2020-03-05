@@ -1,5 +1,5 @@
 local update_formspec = function(meta)
-	local amount = meta:get_string("amount")
+	local amount = meta:get_int("amount")
 	meta:set_string("infotext", "Set score block: " .. amount .. " points")
 
 	meta:set_string("formspec", "size[8,2;]" ..
@@ -27,7 +27,7 @@ minetest.register_node("epic_score:set", {
 
 	on_construct = function(pos)
     local meta = minetest.get_meta(pos)
-		meta:set_string("amount", "1")
+		meta:set_int("amount", 1)
     update_formspec(meta, pos)
   end,
 
@@ -41,7 +41,7 @@ minetest.register_node("epic_score:set", {
 
     if fields.save then
       local amount = tonumber(fields.amount or "1")
-			meta:set_string("amount", amount)
+			meta:set_int("amount", amount)
 			update_formspec(meta, pos)
     end
 
