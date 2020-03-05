@@ -14,6 +14,7 @@ Content:
 --]]
 
 local basedir = minetest.get_worldpath() .. "/epic_score"
+minetest.mkdir(basedir)
 
 local function get_score_file(topic)
 	local sane_filename = string.gsub(topic, "[.|/]", "")
