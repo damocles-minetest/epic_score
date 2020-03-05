@@ -3,13 +3,12 @@ local FORMNAME = "epic_score.form_highscore_configure"
 
 function epic_score.form_highscore_configure(pos, playername)
   local meta = minetest.get_meta(pos)
-  local name = meta:get_string("name")
+  local topic = meta:get_string("topic")
 
-  -- TODO
   local formspec = "size[8,2;]" ..
-    "label[0,0;Epic start block]" ..
-    "label[0,1;" .. name .. "]" ..
-    "button_exit[5.5,1;2,1;start;Start]"
+    "field[0,0;8,1;topic;Topic;" .. topic .. "]" ..
+    "button_exit[0,1;4,1;start;Start]" ..
+    "button_exit[4,1;4,1;show;Show]"
 
   minetest.show_formspec(playername,
     FORMNAME .. ";" .. minetest.pos_to_string(pos),
@@ -28,13 +27,19 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 
 	local pos = minetest.string_to_pos(parts[2])
 
+  if minetest.is_protected(pos, player:get_player_name()) then
+    -- not allowed
+    return
+  end
+
   if fields.show then
     -- show highscore
     epic_score.form_highscore_view(pos, playername)
   end
 
 	if fields.save then
-    print(pos) -- TODO
+    local meta = minetest.get_meta(pos)
+    meta:set_string("topic", fields.topic or "")
 	end
 
 end)
