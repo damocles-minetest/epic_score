@@ -9,6 +9,7 @@ dofile(MP.."/persistence.lua")
 -- blocks
 dofile(MP.."/add_score.lua")
 dofile(MP.."/set_score.lua")
+dofile(MP.."/periodic_add.lua")
 dofile(MP.."/highscore.lua")
 dofile(MP.."/highscore_save.lua")
 

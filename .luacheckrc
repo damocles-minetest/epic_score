@@ -14,5 +14,6 @@ read_globals = {
 
 	-- deps
 	"minetest",
+	"epic",
 	"screwdriver"
 }
