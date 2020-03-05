@@ -30,7 +30,7 @@ minetest.register_globalstep(function(dtime)
   end
   timer = 0
 
-  for _, player in minetest.get_connected_players() do
+  for _, player in ipairs(minetest.get_connected_players()) do
     local playername = player:get_player_name()
     local meta = player:get_meta()
     local score = meta:get_int("epic_score")
