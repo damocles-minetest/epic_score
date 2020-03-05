@@ -5,7 +5,7 @@ local update_formspec = function(meta)
 
 	meta:set_string("formspec", "size[8,3;]" ..
 		"field[0.2,0.5;8,1;amount;Amount;" .. amount .. "]" ..
-		"field[1.2,0.5;8,1;seconds;Per seconds;" .. seconds .. "]" ..
+		"field[0.2,1.5;8,1;seconds;Per seconds;" .. seconds .. "]" ..
 
 		"button_exit[2.1,1.5;8,1;save;Save]"
 	)

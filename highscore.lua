@@ -12,6 +12,11 @@ minetest.register_node("epic_score:highscore", {
 	groups = {cracky=3,oddly_breakable_by_hand=3,epic=1},
 	on_rotate = screwdriver.rotate_simple,
 
+	on_punch = function(pos, _, puncher)
+		-- view
+		epic_score.form_highscore_view(pos, puncher:get_player_name())
+	end,
+
   on_rightclick = function(pos, _, player)
 		local playername = player:get_player_name()
 		if minetest.is_protected(pos, playername) then
