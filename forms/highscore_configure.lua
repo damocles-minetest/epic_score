@@ -17,7 +17,9 @@ function epic_score.form_highscore_configure(pos, playername)
   )
 end
 
-minetest.register_on_player_receive_fields(function(_, formname, fields)
+minetest.register_on_player_receive_fields(function(player, formname, fields)
+  local playername = player:get_player_name()
+
 	local parts = formname:split(";")
 	local name = parts[1]
 	if name ~= FORMNAME then
@@ -25,6 +27,11 @@ minetest.register_on_player_receive_fields(function(_, formname, fields)
 	end
 
 	local pos = minetest.string_to_pos(parts[2])
+
+  if fields.show then
+    -- show highscore
+    epic_score.form_highscore_view(pos, playername)
+  end
 
 	if fields.save then
     print(pos) -- TODO
