@@ -84,7 +84,7 @@ function epic_score.update_score(topic, playername, score)
     table.insert(new_score, entry)
   end
 
-  save_score(score_table, new_score)
+  save_score(topic, new_score)
 end
 
 function epic_score.get_score(topic)

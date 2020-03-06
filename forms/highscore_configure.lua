@@ -6,9 +6,10 @@ function epic_score.form_highscore_configure(pos, playername)
   local topic = meta:get_string("topic")
 
   local formspec = "size[8,2;]" ..
-    "field[0,0;8,1;topic;Topic;" .. topic .. "]" ..
-    "button_exit[0,1;4,1;start;Start]" ..
-    "button_exit[4,1;4,1;show;Show]"
+    "field[0.2,0.5;8,1;topic;Topic;" .. topic .. "]" ..
+
+    "button_exit[0,1.2;4,1;save;Save]" ..
+    "button_exit[4,1.2;4,1;show;Show]"
 
   minetest.show_formspec(playername,
     FORMNAME .. ";" .. minetest.pos_to_string(pos),
