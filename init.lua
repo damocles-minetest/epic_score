@@ -10,6 +10,7 @@ local MP = minetest.get_modpath("epic_score")
 
 -- utils
 dofile(MP.."/persistence.lua")
+dofile(MP.."/cleanup.lua")
 
 -- hud
 dofile(MP.."/hud.lua")
