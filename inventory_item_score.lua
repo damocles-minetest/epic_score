@@ -15,7 +15,7 @@ local update_formspec = function(meta)
 		"")
 end
 
-minetest.register_node("epic:inventory_item_score", {
+minetest.register_node("epic_score:inventory_item_score", {
 	description = "Epic inventory item score block",
 	tiles = {
 		"epic_node_bg.png",
