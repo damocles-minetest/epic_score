@@ -19,6 +19,7 @@ dofile(MP.."/hud.lua")
 dofile(MP.."/add_score.lua")
 dofile(MP.."/set_score.lua")
 dofile(MP.."/periodic_add.lua")
+dofile(MP.."/inventory_item_score.lua")
 dofile(MP.."/highscore.lua")
 dofile(MP.."/highscore_save.lua")
 

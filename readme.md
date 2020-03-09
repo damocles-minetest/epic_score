@@ -9,31 +9,15 @@ A mod for [minetest](http://www.minetest.net)
 
 # Overview
 
-State: **WIP**
+Score plugins for the `epic` mod
 
-# TODO
+Features
+* set score
+* add score
+* peridodically add score
+* score per item in inventory
+* highscore board
 
-* [x] score add block (epic-block)
-  * adds a score-count to the player metadata `epic_score`
-
-* [x] score set block (epic-block)
-  * sets the score-count to a fixed value
-
-* [x] save score clock (epic-block)
-  * Saves the current score to a topic
-
-* [x] highscore block (standalone-block)
-  * show highscore of a quest/topic
-  * clear highscore button for admins
-  * json-export to `epic_score/<topic>`
-
-* [ ] score items (coins)
-  * add to score if collected (mechanism?)
-
-* [x] time bonus/penalty
-  * de- or increases points every n seconds
-
-* [x] hud integration
 
 # Licenses
 
