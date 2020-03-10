@@ -120,7 +120,7 @@ minetest.register_globalstep(function()
 
 		for i, stack in ipairs(list) do
 			local amount = items[stack:get_name()]
-			if amount < 0 or amount > 0 then
+			if amount and amount < 0 or amount > 0 then
 				local count = stack:get_count()
 				player_inv:set_stack("main", i, ItemStack(""))
 
