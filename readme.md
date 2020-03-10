@@ -18,6 +18,14 @@ Features
 * score per item in inventory
 * highscore board
 
+# Setup
+
+This mod can post the highscore to a discord webhook if the `http` api is available
+
+minetest.conf
+```
+secure.http_mods = epic_score
+```
 
 # Licenses
 
