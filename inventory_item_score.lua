@@ -3,7 +3,7 @@
 local item_rewards = {}
 
 local update_formspec = function(meta)
-	local amount = meta:get_string("amount")
+	local amount = meta:get_int("amount")
 
 	meta:set_string("formspec", "size[8,6;]" ..
 		"list[context;main;0,0.5;1,1;]" ..
