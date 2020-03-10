@@ -24,7 +24,7 @@ local execute = function(webhook_url, topic)
     return
   end
 
-  local content = "## Highscore table for '" .. topic .. "'\n"
+  local content = "**Highscore for '" .. topic .. "'**\n"
 
   for rank, entry in ipairs(score_table) do
     content = content .. "(" .. rank .. ") " ..
