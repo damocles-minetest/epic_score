@@ -27,6 +27,12 @@ minetest.conf
 secure.http_mods = epic_score
 ```
 
+
+# Further ideas
+
+* [ ] `set_kill_score` block
+* [ ] `check_score_gt` and `check_score_lt` block
+
 # Licenses
 
 ## Code
