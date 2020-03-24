@@ -7,7 +7,7 @@ local update_formspec = function(meta)
 		"field[0.2,0.5;8,1;amount;Amount;" .. amount .. "]" ..
 		"field[0.2,1.5;8,1;seconds;Per seconds;" .. seconds .. "]" ..
 
-		"button_exit[2.1,1.5;8,1;save;Save]"
+		"button_exit[0,2.5;8,1;save;Save]"
 	)
 end
 
