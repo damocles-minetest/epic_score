@@ -36,7 +36,7 @@ minetest.register_node("epic_score:inventory_item_score", {
 		local inv = meta:get_inventory()
 		inv:set_size("main", 1)
 
-    update_formspec(meta, pos)
+    update_formspec(meta)
   end,
 
   on_receive_fields = function(pos, _, fields, sender)
@@ -48,6 +48,7 @@ minetest.register_node("epic_score:inventory_item_score", {
 		if fields.save then
 			local meta = minetest.get_meta(pos);
 			meta:set_int("amount", tonumber(fields.amount or "0"))
+			update_formspec(meta)
 		end
 
   end,
