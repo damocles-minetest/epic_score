@@ -7,7 +7,7 @@ local update_formspec = function(meta)
 
 	meta:set_string("formspec", "size[8,6;]" ..
 		"list[context;main;0,0.5;1,1;]" ..
-		"field[1,0.5;6,1;amount;Amount;" .. amount .. "]" ..
+		"field[1.5,1;4.5,1;amount;Amount;" .. amount .. "]" ..
 		"button_exit[6,0.5;2,1;save;Save]" ..
 
 		"list[current_player;main;0,2;8,4;]" ..
