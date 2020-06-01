@@ -48,14 +48,21 @@ minetest.register_node("epic_score:save", {
 
 	epic = {
     on_enter = function(_, meta, player, ctx)
-      local player_meta = player:get_meta()
-      local score = player_meta:get_int("epic_score") or 0
+			local is_builder = minetest.check_player_privs(player, "epic_builder");
+			local is_admin = minetest.check_player_privs(player, "priv");
 
-      local topic = meta:get_string("topic")
-			if topic and score > 0 then
-				epic_score.update_score(topic, player:get_player_name(), score)
+			if not is_builder and not is_admin then
+				-- only save highscore if this is a "normal" player
+	      local player_meta = player:get_meta()
+	      local score = player_meta:get_int("epic_score") or 0
+
+	      local topic = meta:get_string("topic")
+				if topic and score > 0 then
+					epic_score.update_score(topic, player:get_player_name(), score)
+				end
+			else
+				minetest.chat_send_player(player:get_player_name(), "[epic] skipping highscore saving because of elevated privs!")
 			end
-
       ctx.next()
     end
   }
