@@ -1,6 +1,6 @@
 local update_formspec = function(meta)
 	local topic = meta:get_string("topic")
-	meta:set_string("infotext", "Score save block: ''" .. topic .. "'")
+	meta:set_string("infotext", "Score load block: ''" .. topic .. "'")
 
 	meta:set_string("formspec", "size[8,2;]" ..
 		-- col 1
@@ -11,8 +11,8 @@ local update_formspec = function(meta)
 		"")
 end
 
-minetest.register_node("epic_score:save", {
-	description = "Epic score save block",
+minetest.register_node("epic_score:load", {
+	description = "Epic score load block, loads a previously saved highscore",
 	tiles = {
 		"epic_node_bg.png",
 		"epic_node_bg.png",
@@ -48,24 +48,14 @@ minetest.register_node("epic_score:save", {
 
 	epic = {
     on_enter = function(_, meta, player, ctx)
-			local is_builder = minetest.check_player_privs(player, "epic_builder");
-			local is_admin = minetest.check_player_privs(player, "priv");
+      local player_meta = player:get_meta()
 
-			if not is_builder and not is_admin then
-				-- only save highscore if this is a "normal" player
-	      local player_meta = player:get_meta()
-	      local score = player_meta:get_int("epic_score") or 0
+      local topic = meta:get_string("topic")
 
-	      local topic = meta:get_string("topic")
-				if topic and score > 0 then
-					-- on disk store
-					epic_score.update_score(topic, player:get_player_name(), score)
-					-- per player store
-					player_meta:set_int("epic_highscore:" .. topic, score)
-				end
-			else
-				minetest.chat_send_player(player:get_player_name(), "[epic] skipping highscore saving because of elevated privs!")
-			end
+			-- retrieve score from per-player store
+			local score = player_meta:get_int("epic_highscore:" .. topic)
+			player_meta:set_int("epic_score", score)
+
       ctx.next()
     end
   }

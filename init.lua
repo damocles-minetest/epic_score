@@ -24,6 +24,7 @@ dofile(MP.."/kill.lua")
 dofile(MP.."/inventory_item_score.lua")
 dofile(MP.."/highscore.lua")
 dofile(MP.."/highscore_save.lua")
+dofile(MP.."/highscore_load.lua")
 
 -- webhooks
 if epic_score.http then
